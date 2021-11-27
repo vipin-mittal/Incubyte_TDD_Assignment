@@ -5,8 +5,13 @@ public class Calculator {
 		if(numbers=="") {
 			return 0;
 		}else {
-			String num = numbers.replaceAll("\n", ",");
-			String numberList[]=num.split(",");
+			String delimiter = ",";
+			if(numbers.matches("[/]{2}(.*)\n(.*)")){
+				delimiter = Character.toString(numbers.charAt(2));
+				numbers = numbers.substring(4);
+			}
+			String num = numbers.replaceAll("\n", delimiter);
+			String numberList[]=num.split(delimiter);
 			return addNumberList(numberList);
 		}
 	}
@@ -19,7 +24,5 @@ public class Calculator {
 		}
 		return addition;
 	}
-	public static void main(String args[]) {
-		System.out.println(add("1\n2,3"));
-	}
+
 }
