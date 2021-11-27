@@ -5,11 +5,10 @@ public class Calculator {
 		if(numbers=="") {
 			return 0;
 		}else {
-			String numberList[]=numbers.split(",");
+			String num = numbers.replaceAll("\n", ",");
+			String numberList[]=num.split(",");
 			return addNumberList(numberList);
-			
 		}
-		
 	}
 
 	private static int addNumberList(String[] numberList) {
@@ -19,5 +18,8 @@ public class Calculator {
 			addition+=digit;
 		}
 		return addition;
+	}
+	public static void main(String args[]) {
+		System.out.println(add("1\n2,3"));
 	}
 }
