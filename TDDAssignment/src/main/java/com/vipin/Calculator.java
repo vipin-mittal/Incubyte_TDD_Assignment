@@ -5,6 +5,6 @@ public class Calculator {
 		if(numbers=="") {
 			return 0;
 		}
-		return Integer.MAX_VALUE;
+		return Integer.parseInt(numbers);
 	}
 }
