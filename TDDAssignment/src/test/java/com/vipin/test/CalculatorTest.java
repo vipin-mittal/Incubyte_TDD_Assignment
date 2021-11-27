@@ -9,7 +9,7 @@ import com.vipin.Calculator;
 public class CalculatorTest {
 
 	@Test
-	public void test() {
+	public void test1() {
 		assertEquals(0, Calculator.add(""));
 	}
 
